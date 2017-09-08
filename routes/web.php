@@ -12,5 +12,5 @@ Route::get('/threads/create', function() {
 
 
 Route::get('/messages', function() {
-	return view('messages.greeting');
+	return view('messages.hello', ['name' => 'Ari Steinn']);
 });
