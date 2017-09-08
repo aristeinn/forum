@@ -11,6 +11,7 @@ Route::get('/threads/create', function() {
 });
 
 
-Route::get('/messages', function() {
-	return view('messages.hello', ['name' => 'Ari Steinn']);
+Route::get('/', function() {
+	$name = 'ARI STEINN';
+	return view('messages.hello', compact('name'));
 });
