@@ -1,5 +1,5 @@
 <html>
 <body>
-	<div>Hello, I'm Ari</div>
+	<h1>This is greeting number {{ $id }} with {{ $count }} replies</h1>
 </body>
 </html>
