@@ -20,6 +20,13 @@
                         <div class="form-group">
                             <button class="btn btn-primary">Publish</button>
                         </div>
+                        @foreach ($countries as $country)
+                            @if ($country === 'Ísland')
+                            <h1>{{ $country }}</h1>
+                            @else
+                            <p>{{ $country }}</p>
+                            @endif
+                        @endforeach
                     </form>
                 </div>
             </div>
