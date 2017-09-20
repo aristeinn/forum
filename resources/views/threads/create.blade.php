@@ -20,13 +20,19 @@
                         <div class="form-group">
                             <button class="btn btn-primary">Publish</button>
                         </div>
-                        @foreach ($countries as $country)
-                            @if ($country === 'Ísland')
-                            <h1>{{ $country }}</h1>
+                        <ul>
+                            @foreach ($tasks as $task)
+                            @if ( $task['complete'])
+                                <li>
+                                    <a href="{{ $task['anchor'] }}">{{ $task['title'] }}</a>
+                                </li>
                             @else
-                            <p>{{ $country }}</p>
+                                <li>
+                                    <s>{{ $task['title'] }}</s>
+                                </li>
                             @endif
-                        @endforeach
+                            @endforeach
+                        </ul>
                     </form>
                 </div>
             </div>
@@ -34,3 +40,12 @@
     </div>
 </div>
 @endsection
+
+
+{{--
+
+<li>
+    <a href="{{ $task['anchor'] }}"><s>{{ $task['title'] }}</s></a>
+ </li> 
+
+ --}}
