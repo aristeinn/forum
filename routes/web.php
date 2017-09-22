@@ -2,6 +2,8 @@
 
 Auth::routes();
 
+Route::get('/profiles/{id}', 'ProfileController@profile');
+
 Route::get('/threads', 'ThreadsController@index');
 
 Route::get('/threads/create', 'ThreadsController@create');
