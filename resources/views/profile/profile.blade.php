@@ -3,9 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-9">
+        <div>
         <div style="font-size:30px;">Ari Steinn Guðmundsson Meðlimur í 3 vikur</div>
         @foreach($threads as $thread)
+        <div class="col-md-9">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     {{ $thread['title'] }} <a href="#">Laravel controller</a>
@@ -23,7 +24,8 @@
                 </div>
             </div>
             @endforeach
-            <div style="display:inline-block; float:right;" class="panel panel-default">
+        </div>
+            <div class="panel panel-default col-md-9">
                 <div class="panel-body">
                     <div>
                     Nafn
