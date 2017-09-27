@@ -5,6 +5,7 @@
     <div class="row">
         <div>
         <div style="font-size:30px;">Ari Steinn Guðmundsson Meðlimur í 3 vikur</div>
+        <hr>
         @foreach($threads as $thread)
         <div class="col-md-6">
             <div class="panel panel-default">
