@@ -31,9 +31,9 @@ class ThreadsController extends Controller
         // Validate
         $thread = new Thread;
         $thread->title = $request->title;
-        $thread->body = $request->body
+        $thread->body = $request->body;
         $thread->user_id = 1;
-        $threads->save();
+        $thread->save();
 
         return redirect('/threads');
     }
