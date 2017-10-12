@@ -11,12 +11,12 @@
                 @foreach($threads as $thread)
                     <article>
                         <div>
-                            <h4>
-                                {{ $thread['title'] }}
-                            </h4>
+                            <a href="/threads/{{ $thread->id }}">
+                                {{ $thread->title }}
+                            </a>
                         </div>
                         <div class="body">
-                        {{ $thread['body'] }}
+                        {{ $thread->body }}
 
                         </div>
                     </article>
