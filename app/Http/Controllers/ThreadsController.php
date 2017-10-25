@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\D8;
 use Illuminate\Http\Request;
 
 use App\Thread;
-use Validator;
 
 class ThreadsController extends Controller
 {
@@ -36,27 +35,27 @@ class ThreadsController extends Controller
     public function store(Request $request)
     {
 
-        $validator = Validator::make($request->all(), [
+/*        $validator = Validator::make($request->all(), [
             'title' => 'required|max:40',
             'body' => 'required|min:20',
+        ]);*/
+
+        $this->validate($request, [
+            'title'=>'required|max:40',
+            'body' =>'required|min:20'
         ]);
 
-        if ($validator->fails()) {
+/*        if ($validator->fails()) {
             return redirect('threads/create')
                         ->withErrors($validator)
                         ->withInput();
-        }
+        }*/
 
-
-        // Validate
-        $thread = new Thread;
-        $thread->title = $request->title;
-        $thread->body = $request->body;
-        $thread->user_id = 1;
-        $thread->save();
-        $request->flash();
-        $thread->title = $request->old('title');
-        $thread->body = $request->old('body');
+        Thread::create([
+            'title'=> $request->title,
+            'body'=> $request->body,
+            'user_id'=> auth()->id()
+            ]);
 
         return redirect('/threads');
     }

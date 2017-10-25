@@ -13,7 +13,8 @@
                             Thread Body
                         </div>
                         <div class="body">
-
+                        <textarea rows="4" cols="50"></textarea>
+                        <input type="submit">
                         </div>
                     </article>
                 </div>
